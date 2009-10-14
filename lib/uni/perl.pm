@@ -11,6 +11,7 @@ m{
 use strict;
 use warnings;
 }x;
+use mro ();
 
 =head1 NAME
 
@@ -18,11 +19,11 @@ uni::perl - all modern features + unicode support in one pragma
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -87,15 +88,11 @@ sub import {
 	mro::set_mro($caller, 'c3');
 	
 	#use open (:utf8 :std);
-	${^OPEN} = join("\0", (':utf8')x2);
+	${^OPEN} = ":utf8\0:utf8";
 	binmode(STDIN,   ":utf8");
 	binmode(STDOUT,  ":utf8");
 	binmode(STDERR,  ":utf8");
 	
-	#unless ($INC{'uni/perl/carp.pm'}) {
-	#	require uni::perl::carp;
-	#	uni::perl::carp->load( $caller );
-	#}
 	for my $sub (qw(carp croak confess)) {
 		no strict 'refs';
 		*{ $caller .'::'. $sub } = \&$sub;

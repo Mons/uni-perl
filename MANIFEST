@@ -1,4 +1,3 @@
-.cvsignore
 Changes
 ex/sample.pl
 inc/Module/AutoInstall.pm

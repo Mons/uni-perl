@@ -2,7 +2,7 @@ use inc::Module::Install;
 
 name     'uni-perl';
 all_from 'lib/uni/perl.pm';
-version   my $v = '0.01';
+version   my $v = '0.02';
 author   'Mons Anderson <mons@cpan.org>';
 license  'perl';
 
