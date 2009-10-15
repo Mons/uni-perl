@@ -2,7 +2,7 @@ NAME
     uni::perl - all modern features + unicode support in one pragma
 
 VERSION
-    Version 0.02
+    Version 0.03
 
 SYNOPSIS
     There is most commonly used pragmas, such as strict, feature, warnings,

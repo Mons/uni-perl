@@ -2,11 +2,14 @@ use inc::Module::Install;
 
 name     'uni-perl';
 all_from 'lib/uni/perl.pm';
-version   my $v = '0.02';
+version   my $v = '0.03';
 author   'Mons Anderson <mons@cpan.org>';
 license  'perl';
 
+build_requires 'lib::abs';
 build_requires 'Test::More';
+build_requires 'Test::NoWarnings';
+
 feature Charsets => [
 	Encode => '2.37', # Use latest version, since we're modern
 ];
