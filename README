@@ -1,9 +1,6 @@
 NAME
     uni::perl - all modern features + unicode support in one pragma
 
-VERSION
-    Version 0.03
-
 SYNOPSIS
     There is most commonly used pragmas, such as strict, feature, warnings,
     utf8, open, mro. Also almost every modern program uses Encode and Carp
@@ -23,19 +20,22 @@ SYNOPSIS
         use utf8;
         use open (:utf8 :std);
         use mro 'c3';
+        use Carp qw(carp croak confess);
+
+        # With ':dumper' you got dumper() function, that similar to Data::Dumper::Dumper()
+        use uni::perl ':dumper';
+
+        # With ':xd' you got xd() function from Devel::Hexdump (if installed)
+        use uni::perl ':xd';
 
 AUTHOR
     Mons Anderson, "<mons at cpan.org>"
 
-BUGS
-    Please report any bugs or feature requests to "bug-uni-perl at
-    rt.cpan.org", or through the web interface at
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=uni-perl>. I will be
-    notified, and then you'll automatically be notified of progress on your
-    bug as I make changes.
+THANKS
+    Thanks to Marc Lehmann for useful hints, found in common::sense
 
 COPYRIGHT & LICENSE
-    Copyright 2009 Mons Anderson, all rights reserved.
+    Copyright 2009-2012 Mons Anderson
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

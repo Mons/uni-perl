@@ -1,5 +1,14 @@
 Revision history for uni-perl
 
+0.90    2012-05-29
+        Remove blackjack and hookers ;)
+        Make autogeneration, like in common::sense
+        Support for feature unicode_strings
+        Fixes for 5.15+
+        Added xd (Devel::Hexdump)
+        Added utf::(encode|decode) by default
+        Some dist cleanup
+
 0.03    2009-10-15
         Fix geps
 

@@ -1,5 +1,6 @@
 blib*
 inc*
+lib/uni/perl.pm
 Makefile
 Makefile.old
 Build

@@ -1,8 +1,7 @@
 #!/usr/bin/env perl
 
-use Test::More tests => 8;
-use Test::NoWarnings;
-use lib::abs '../lib';
+use Test::More tests => 7
+	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } };
 use uni::perl;
 
 ok defined &carp, 'have carp';

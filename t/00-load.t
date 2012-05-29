@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
-use Test::More tests => 1;
-use lib::abs '../lib';
+use Test::More tests => 1
+	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } };
 
 BEGIN {
 	use_ok( 'uni::perl' );

@@ -2,11 +2,6 @@
 
 use strict;
 use Test::More;
-use lib::abs "../lib";
-BEGIN {
-	my $lib = lib::abs::path( ".." );
-	chdir $lib or plan skip_all => "Can't chdir to dist $lib";
-}
 
 # Ensure a recent version of Test::Pod
 eval "use Test::Pod 1.22; 1"
@@ -14,3 +9,4 @@ eval "use Test::Pod 1.22; 1"
 
 all_pod_files_ok();
 exit;
+require Test::NoWarnings;

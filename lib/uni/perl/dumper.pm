@@ -6,7 +6,18 @@ use strict;
 use warnings;
 }x;
 
-sub dumper (@) {
+sub dumper_uni(@) {
+	eval {
+		require uni::dumper;
+	1} or do {
+		goto &dumper_dd;
+	};
+	no strict 'refs';
+	*{ caller().'::dumper' } = \&uni::dumper::dumper;
+	goto &{ caller().'::dumper' };
+}
+
+sub dumper_dd (@) {
 	require Data::Dumper;
 	no strict 'refs';
 	*{ caller().'::dumper' } = sub (@) {
@@ -37,7 +48,7 @@ sub load {
 	my $me = shift;
 	my $caller = shift;
 	no strict 'refs';
-	*{ $caller .'::dumper' } = \&dumper;
+	*{ $caller .'::dumper' } = \&dumper_uni;
 	return;
 }
 

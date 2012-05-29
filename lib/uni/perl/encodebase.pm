@@ -5,10 +5,10 @@ m{
 use strict;
 use warnings;
 }x;
-use Encode;
+use Encode ();
 
 sub _generate($;$) {
-	my ($pkg,$encoding) = @_;
+	my ($pkg, $encoding) = @_;
 	$encoding //= $pkg;
 	my $e = Encode::find_encoding($encoding)
 		or croak "Can't load encoding `$encoding'";

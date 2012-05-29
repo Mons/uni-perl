@@ -1,29 +1,21 @@
-use inc::Module::Install;
+use ExtUtils::MakeMaker;
 
-name     'uni-perl';
-all_from 'lib/uni/perl.pm';
-version   my $v = '0.03';
-author   'Mons Anderson <mons@cpan.org>';
-license  'perl';
-
-build_requires 'lib::abs';
-build_requires 'Test::More';
-build_requires 'Test::NoWarnings';
-
-feature Charsets => [
-	Encode => '2.37', # Use latest version, since we're modern
-];
-feature Dumper => [
-	'Data::Dumper' => '2.1'
-];
-#requires 'Encode';
-
-auto_install;
-
-provides 'uni::perl' => {
-	version => $v,
-	file    => 'lib/uni/perl.pm',
-};
-
-WriteAll;
+WriteMakefile(
+	NAME         => "uni::perl",
+	AUTHOR       => 'Mons Anderson <mons@cpan.org>',
+	PREREQ_PM    => { perl => '5.10.0' },
+	ABSTRACT_FROM=> "perl.pm.PL",
+	VERSION_FROM => "perl.pm.PL",
+	PL_FILES     => { "perl.pm.PL" => '$(INST_LIB)/uni/perl.pm' },
+	clean        => { FILES => "perl.pm" },
+	META_ADD     => {
+		provides => {
+			'uni::perl' => {
+				file => 'lib/uni/perl.pm',
+				version => '0.9',
+			}
+		},
+		license => 'perl',
+	}
+);
 
