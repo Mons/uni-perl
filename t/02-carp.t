@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Test::More tests => 7
-	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } };
+	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } || 0 };
 use uni::perl;
 
 ok defined &carp, 'have carp';

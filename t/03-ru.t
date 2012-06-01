@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Test::More tests => 9
-	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } };
+	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } || 0 };
 use uni::perl ':ru';
 
 ok defined &cp1251::encode, 'have encode';

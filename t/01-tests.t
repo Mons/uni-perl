@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Test::More tests => 11
-	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } };
+	+do { eval { require Test::NoWarnings;Test::NoWarnings->import; 1 } || 0 };
 use uni::perl 0.9;
 
 my $char = "а";
