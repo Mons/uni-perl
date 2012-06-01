@@ -103,7 +103,7 @@ test_warn_die {
 
 test_warn_die {
 	eval q{
-		my $x = sub : locked {};
+		my $x if 0;
 	1} or die;
 } 'deprecated';
 
