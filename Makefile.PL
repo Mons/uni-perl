@@ -12,7 +12,7 @@ WriteMakefile(
 		provides => {
 			'uni::perl' => {
 				file => 'lib/uni/perl.pm',
-				version => '0.9',
+				version => '0.91',
 			}
 		},
 		license => 'perl',
