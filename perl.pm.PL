@@ -118,7 +118,7 @@ rename "$ARGV[0]~", $ARGV[0];
 __DATA__
 package uni::perl;
 
-our $VERSION = '0.91';
+our $VERSION = '0.92';
 
 BEGIN {
 SELFBEGIN

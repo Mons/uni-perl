@@ -1,5 +1,8 @@
 Revision history for uni-perl
 
+0.92    2014-05-06
+        Fix for perl 5.18
+
 0.91    2012-06-01
         Fix deprecation warning test. :locked was deprecated later than 5.10.0
 
